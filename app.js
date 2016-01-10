@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //connect to mongodb
-mongoose.connect('mongodb://waltercj:Eline1jr@ds039165.mongolab.com:39165/stockmarketapp', function (error) {
+mongoose.connect(process.env.MONGOLAB_URI, function (error) {
     if (error) console.error(error);
     else console.log('mongo connected');
 });
